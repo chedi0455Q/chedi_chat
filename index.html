@@ -31,7 +31,7 @@
     flex-direction: column;
   }
 
-  /* Animated grid background */
+ 
   body::before {
     content: '';
     position: fixed;
@@ -46,7 +46,7 @@
 
   #app { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100vh; max-width: 860px; margin: 0 auto; width: 100%; }
 
-  /* Header */
+ 
   header {
     display: flex; align-items: center; gap: 14px;
     padding: 14px 20px;
@@ -103,7 +103,7 @@
   }
   .portfolio-link:hover { background: rgba(59,130,246,0.25); }
 
-  /* Suggestions strip */
+
   #suggestions {
     display: flex; gap: 8px; padding: 10px 16px;
     overflow-x: auto; flex-shrink: 0;
@@ -121,7 +121,7 @@
   }
   .chip:hover { background: var(--accent-glow); border-color: rgba(59,130,246,0.4); color: var(--accent2); }
 
-  /* Messages */
+  
   #messages {
     flex: 1; overflow-y: auto;
     padding: 20px 16px;
@@ -177,7 +177,7 @@
   .time { font-size: 10px; color: var(--muted); margin-top: 4px; text-align: right; }
   .ai-time { text-align: left; margin-left: 39px; }
 
-  /* Typing indicator */
+ 
   .typing-row { display: flex; align-items: center; gap: 9px; }
   #typing {
     display: none;
@@ -198,7 +198,7 @@
     40% { opacity: 1; transform: scale(1.1); }
   }
 
-  /* Input bar */
+ 
   #input-bar {
     padding: 12px 16px;
     background: rgba(17,19,24,0.9);
@@ -280,9 +280,7 @@
 </div>
 
 <script>
-// ======================================================
-//  BASE DE CONNAISSANCES — Chedi Jaballi
-// ======================================================
+
 const CHEDI = {
   nom: "Chedi Jaballi",
   age: 20,
@@ -375,9 +373,7 @@ const CHEDI = {
   }
 };
 
-// ======================================================
-//  MOTEUR DE RÉPONSE — 100% Client-Side
-// ======================================================
+
 function getTime() {
   return new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
 }
@@ -390,7 +386,7 @@ function detect(text, keywords) {
 function buildResponse(question) {
   const q = question;
 
-  // Salutation / présentation
+  
   if (detect(q, ['bonjour','salut','hello','qui es-tu','qui etes','presentation','présentation','présente','tu es qui','c\'est quoi','about'])) {
     return `Bonjour ! 👋 Je suis <strong>Chedi Jaballi</strong>, 20 ans, basé à Aubervilliers (93).<br><br>
 Je suis <strong>Alternant Développeur Full Stack</strong>, actuellement en 2ème année de BTS SIO SLAM. Je prépare un <strong>Bachelor 3 spécialisé en Data & IA</strong> en alternance pour la rentrée 2026.<br><br>
@@ -398,7 +394,7 @@ Je suis passionné par le développement, l'IA et les données — toujours curi
 Retrouve mon travail sur mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a>.`;
   }
 
-  // Compétences
+  
   if (detect(q, ['competence','compétence','skill','technologie','langages','maîtrise','sais faire','stack','outil','langage'])) {
     const C = CHEDI.competences;
     return `Voici mon stack technique 💻 :<br><br>
@@ -408,7 +404,8 @@ Retrouve mon travail sur mon <a href="${CHEDI.portfolio}" target="_blank">portfo
 <strong>Systèmes & Outils :</strong><br>${C.systemes.concat(C.outils).map(t=>`<span class="tag">${t}</span>`).join('')}`;
   }
 
-  // Projets
+
+  
   if (detect(q, ['projet','projects','portfolio','réalisation','creation','application','site','jeu','crypto','speed','smart bike','trading'])) {
     return `J'ai réalisé plusieurs projets concrets 🚀 :<br><br>` +
       CHEDI.projets.map(p =>
@@ -450,7 +447,7 @@ ${e.detail}`;
 📍 ${CHEDI.localisation}`;
   }
 
-  // Formations
+  
   if (detect(q, ['formation','etude','études','bts','bachelor','epsi','bac','école','diplome','diplôme'])) {
     return `Mon parcours scolaire 🏫 :<br><br>` +
       CHEDI.formations.map(f =>
@@ -458,21 +455,20 @@ ${e.detail}`;
       ).join('<br><br>');
   }
 
-  // Langues
   if (detect(q, ['langue','language','anglais','allemand','parle','bilingue','niveau'])) {
     return `Je parle plusieurs langues 🌍 :<br><br>` +
       CHEDI.langues.map(l => `<strong>${l.langue}</strong> — Niveau ${l.niveau}`).join('<br>') +
       `<br><br>Mon niveau B2 en anglais me permet de travailler dans des environnements internationaux.`;
   }
 
-  // Centres d'intérêt
+  
   if (detect(q, ['interet','intérêt','hobby','loisir','passion','sport','foot','trading','video','contenu'])) {
     return `En dehors du code, je m'intéresse à 🎯 :<br><br>` +
       CHEDI.interets.map(i => `• ${i}`).join('<br>') +
       `<br><br>Le trading m'a d'ailleurs beaucoup appris sur la rigueur et l'analyse de données !`;
   }
 
-  // Age / info perso
+  
   if (detect(q, ['age','âge','ans','habite','localisation','adresse','permis','lieu'])) {
     return `Quelques infos sur moi ℹ️ :<br><br>
 🎂 <strong>${CHEDI.age} ans</strong><br>
@@ -480,7 +476,7 @@ ${e.detail}`;
 🚗 Permis <strong>${CHEDI.permis}</strong>`;
   }
 
-  // IA / data
+  
   if (detect(q, ['ia','intelligence artificielle','data','machine learning','ml','prompt','grok','claude'])) {
     return `L'IA et la Data, c'est ma passion actuelle ! 🤖<br><br>
 Je pratique le <strong>Prompt Engineering</strong> avec Claude et Grok au quotidien — notamment pour optimiser du code et automatiser des workflows.<br><br>
@@ -488,21 +484,19 @@ C'est d'ailleurs pourquoi je vise un <strong>Bachelor 3 Data & IA</strong> : je 
 Cette interface de chat que vous utilisez en ce moment ? Elle tourne <strong>100% côté client</strong>, sans API externe. 😄`;
   }
 
-  // Merci / aurevoir
+ 
   if (detect(q, ['merci','thanks','super','parfait','top','bravo','bonne journée','au revoir','bye'])) {
     return `Merci à vous ! 😊 C'était un plaisir d'échanger.<br>
 N'hésitez pas à visiter mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a> ou à me contacter directement pour toute opportunité.<br><br>
 Bonne journée ! 🚀`;
   }
 
-  // Fallback
+ 
   return `Bonne question ! 🤔 Pour l'instant je peux vous parler de mes <strong>compétences</strong>, mes <strong>projets</strong>, mon <strong>expérience</strong>, ma recherche d'<strong>alternance</strong>, ou mes <strong>coordonnées</strong>.<br><br>
 Vous pouvez aussi utiliser les suggestions en haut ou visiter mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a> pour en savoir plus !`;
 }
 
-// ======================================================
-//  UI LOGIC
-// ======================================================
+
 const messagesDiv = document.getElementById('messages');
 const typingContainer = document.getElementById('typing-container');
 const inputEl = document.getElementById('user-input');
@@ -568,7 +562,7 @@ inputEl.addEventListener('input', () => {
   inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
 });
 
-// Message de bienvenue
+
 setTimeout(() => {
   appendMsg(`Bonjour et bienvenue ! 👋 Je suis l'assistant IA de <strong>Chedi Jaballi</strong>.<br><br>
 Je peux répondre à vos questions sur son profil, ses compétences, ses projets et sa disponibilité pour une <strong>alternance en Data & IA (rentrée 2026)</strong>.<br><br>

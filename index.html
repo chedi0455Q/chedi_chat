@@ -8,324 +8,91 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root {
-    --bg: #0a0c10;
-    --surface: #111318;
-    --surface2: #181c24;
-    --border: #1e2330;
-    --accent: #3b82f6;
-    --accent2: #60a5fa;
-    --accent-glow: rgba(59,130,246,0.18);
-    --text: #e8eaf0;
-    --muted: #6b7280;
-    --user-bubble: #1d3557;
-    --ai-bubble: #181c24;
+    --bg: #0a0c10; --surface: #111318; --surface2: #181c24; --border: #1e2330;
+    --accent: #3b82f6; --accent2: #60a5fa; --accent-glow: rgba(59,130,246,0.18);
+    --text: #e8eaf0; --muted: #6b7280; --user-bubble: #1d3557; --ai-bubble: #181c24;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    font-family: 'DM Sans', sans-serif;
-    color: var(--text);
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
+  body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
   #app { position: relative; z-index: 1; display: flex; flex-direction: column; height: 100vh; max-width: 860px; margin: 0 auto; width: 100%; }
-
-  header {
-    display: flex; align-items: center; gap: 14px;
-    padding: 14px 20px;
-    background: rgba(17,19,24,0.85);
-    backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    flex-shrink: 0;
-  }
-  .avatar-wrap {
-    position: relative;
-    width: 44px; height: 44px; flex-shrink: 0;
-  }
-  .avatar {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 17px;
-    color: #fff; letter-spacing: 0.5px;
-  }
-  .online-dot {
-    position: absolute; bottom: 1px; right: 1px;
-    width: 11px; height: 11px; border-radius: 50%;
-    background: #22c55e;
-    border: 2px solid var(--bg);
-    animation: pulse-dot 2s infinite;
-  }
-  @keyframes pulse-dot {
-    0%,100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
-    50% { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
-  }
-  .header-info h1 {
-    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px;
-    color: var(--text); line-height: 1;
-  }
-  .header-info p {
-    font-size: 11.5px; color: var(--muted); margin-top: 3px;
-  }
-  .header-badge {
-    margin-left: auto;
-    background: var(--accent-glow);
-    border: 1px solid rgba(59,130,246,0.3);
-    color: var(--accent2);
-    font-size: 10.5px; font-weight: 500;
-    padding: 4px 10px; border-radius: 20px;
-  }
-  .portfolio-link {
-    font-size: 11px; color: var(--accent2);
-    text-decoration: none;
-    padding: 5px 10px; border-radius: 8px;
-    border: 1px solid rgba(59,130,246,0.25);
-    background: var(--accent-glow);
-    transition: all 0.2s;
-  }
-
-  #suggestions {
-    display: flex; gap: 8px; padding: 10px 16px;
-    overflow-x: auto; flex-shrink: 0;
-    background: rgba(17,19,24,0.6);
-    border-bottom: 1px solid var(--border);
-    scrollbar-width: none;
-  }
-  .chip {
-    flex-shrink: 0;
-    font-size: 12px; padding: 6px 13px; border-radius: 20px;
-    background: var(--surface2); border: 1px solid var(--border);
-    color: #94a3b8; cursor: pointer; transition: all 0.2s; white-space: nowrap;
-  }
-  .chip:hover { background: var(--accent-glow); border-color: rgba(59,130,246,0.4); color: var(--accent2); }
-
-  #messages {
-    flex: 1; overflow-y: auto;
-    padding: 20px 16px;
-    display: flex; flex-direction: column; gap: 14px;
-    scroll-behavior: smooth;
-  }
-
+  header { display: flex; align-items: center; gap: 14px; padding: 14px 20px; background: rgba(17,19,24,0.85); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #1d4ed8, #3b82f6); display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-weight: 800; color: #fff; }
+  .header-info h1 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; }
+  .header-info p { font-size: 11px; color: var(--muted); }
+  #suggestions { display: flex; gap: 8px; padding: 10px 16px; overflow-x: auto; background: rgba(17,19,24,0.6); border-bottom: 1px solid var(--border); scrollbar-width: none; }
+  .chip { flex-shrink: 0; font-size: 12px; padding: 6px 13px; border-radius: 20px; background: var(--surface2); border: 1px solid var(--border); color: #94a3b8; cursor: pointer; }
+  #messages { flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 14px; }
   .msg-row { display: flex; align-items: flex-end; gap: 9px; animation: fadeUp 0.3s ease; }
   .msg-row.user { flex-direction: row-reverse; }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .msg-avatar {
-    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 12px; font-weight: 700;
-  }
-  .msg-avatar.ai { background: linear-gradient(135deg, #1d4ed8, #3b82f6); color: #fff; }
-  .msg-avatar.user-av { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
-
-  .bubble {
-    max-width: 72%; padding: 11px 15px; border-radius: 16px;
-    font-size: 13.5px; line-height: 1.65;
-  }
-  .bubble.ai {
-    background: var(--ai-bubble);
-    border: 1px solid var(--border);
-    border-bottom-left-radius: 4px;
-    color: var(--text);
-  }
-  .bubble.user {
-    background: var(--user-bubble);
-    border: 1px solid rgba(59,130,246,0.3);
-    border-bottom-right-radius: 4px;
-    color: #dbeafe;
-  }
-
-  .bubble strong { color: var(--accent2); font-weight: 600; }
-  .bubble .tag {
-    display: inline-block; font-size: 11px; padding: 2px 8px;
-    background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.25);
-    color: var(--accent2); border-radius: 10px; margin: 2px 2px 2px 0;
-  }
-
-  .time { font-size: 10px; color: var(--muted); margin-top: 4px; text-align: right; }
-  .ai-time { text-align: left; margin-left: 39px; }
-
-  #typing-container { padding: 0 16px 6px; display:none; }
-  #typing {
-    background: var(--ai-bubble);
-    border: 1px solid var(--border);
-    border-radius: 16px; border-bottom-left-radius: 4px;
-    padding: 12px 16px;
-  }
-  .dots { display: flex; gap: 5px; }
-  .dots span {
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--muted); animation: blink 1.2s infinite;
-  }
-  @keyframes blink { 0%,80%,100% { opacity: 0.3; } 40% { opacity: 1; } }
-
-  #input-bar {
-    padding: 12px 16px;
-    background: rgba(17,19,24,0.9);
-    border-top: 1px solid var(--border);
-    display: flex; gap: 10px; align-items: center;
-  }
-  #user-input {
-    flex: 1; background: var(--surface2);
-    border: 1px solid var(--border); color: var(--text);
-    border-radius: 24px; padding: 11px 18px;
-    font-size: 13.5px; outline: none;
-    resize: none;
-  }
-  #send-btn {
-    width: 42px; height: 42px; border-radius: 50%; border: none;
-    background: linear-gradient(135deg, #1d4ed8, #3b82f6);
-    color: #fff; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-  }
+  .bubble { max-width: 75%; padding: 12px 16px; border-radius: 16px; font-size: 13.5px; line-height: 1.6; }
+  .bubble.ai { background: var(--ai-bubble); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+  .bubble.user { background: var(--user-bubble); border: 1px solid rgba(59,130,246,0.3); border-bottom-right-radius: 4px; }
+  .tag { display: inline-block; font-size: 10px; padding: 2px 8px; background: rgba(59,130,246,0.15); color: var(--accent2); border-radius: 8px; margin-right: 4px; margin-top: 4px; border: 1px solid rgba(59,130,246,0.3); }
+  #input-bar { padding: 15px; background: var(--surface); border-top: 1px solid var(--border); display: flex; gap: 10px; }
+  #user-input { flex: 1; background: var(--surface2); border: 1px solid var(--border); color: #fff; border-radius: 20px; padding: 10px 15px; outline: none; resize: none; }
+  #send-btn { background: var(--accent); color: #fff; border: none; width: 40px; height: 40px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
 <div id="app">
   <header>
-    <div class="avatar-wrap">
-      <div class="avatar">CJ</div>
-      <div class="online-dot"></div>
-    </div>
-    <div class="header-info">
-      <h1>Chedi Jaballi</h1>
-      <p>Alternant Développeur Full Stack · Assistant IA</p>
-    </div>
-    <div class="header-badge">IA Locale</div>
-    <a href="https://my-portfolio-five-chi-95.vercel.app/" target="_blank" class="portfolio-link">Portfolio →</a>
+    <div class="avatar">CJ</div>
+    <div class="header-info"><h1>Chedi Jaballi</h1><p>Développeur Full Stack · Expert IA</p></div>
+    <a href="#" class="ml-auto text-xs text-blue-400">Portfolio →</a>
   </header>
 
   <div id="suggestions">
-    <div class="chip" onclick="send('Qui es-tu ?')">👤 Qui es-tu ?</div>
-    <div class="chip" onclick="send('Quelles sont tes compétences ?')">💻 Compétences</div>
-    <div class="chip" onclick="send('Parle-moi de tes projets')">🚀 Projets</div>
+    <div class="chip" onclick="send('Tes projets')">🚀 Mes Projets</div>
+    <div class="chip" onclick="send('Compétences')">💻 Compétences</div>
     <div class="chip" onclick="send('Contact')">📬 Contact</div>
   </div>
 
   <div id="messages"></div>
 
-  <div id="typing-container">
-    <div class="msg-row">
-      <div class="msg-avatar ai">CJ</div>
-      <div id="typing"><div class="dots"><span></span><span></span><span></span></div></div>
-    </div>
-  </div>
-
   <div id="input-bar">
-    <textarea id="user-input" rows="1" placeholder="Posez une question…"></textarea>
-    <button id="send-btn" onclick="sendFromInput()">
-      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="22" y1="2" x2="11" y2="13"></line>
-        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-      </svg>
-    </button>
+    <textarea id="user-input" rows="1" placeholder="Posez une question..."></textarea>
+    <button id="send-btn" onclick="sendFromInput()">➔</button>
   </div>
 </div>
 
 <script>
 const CHEDI = {
-  nom: "Chedi Jaballi",
-  email: "jaballichedi92@gmail.com",
-  telephone: "07 44 29 61 55",
   projets: [
-    { 
-      nom: "Socializus", 
-      type: "Application Mobile (Groupe)", 
-      techno: ["React Native", "Firebase"], 
-      detail: "Participation au développement d'une application d'intégration sociale et sorties." 
-    },
-    { 
-      nom: "Meetub", 
-      type: "Plateforme Web (Groupe)", 
-      techno: ["PHP", "Symfony", "MySQL", "Tailwind CSS"], 
-      detail: "Création d'un site communautaire pour la mise en relation d'utilisateurs par centres d'intérêt." 
-    },
-    { 
-      nom: "GreenDesk", 
-      type: "Site Web de Gestion (Solo)", 
-      techno: ["HTML", "CSS", "PHP"], 
-      detail: "Projet réalisé seul pour l'organisation d'espaces de travail éco-responsables." 
-    },
-    { 
-      nom: "Snake Game", 
-      type: "Jeu Classique (Solo)", 
-      techno: ["JavaScript", "HTML5 Canvas"], 
-      detail: "Développement en solo focalisé sur la logique algorithmique." 
-    },
-    { 
-      nom: "SMART BIKE", 
-      type: "Site web dynamique", 
-      techno: ["PHP", "MySQL"], 
-      detail: "Site d'exploration et commande de vélos électriques." 
-    }
+    { nom: "Meetub", type: "Plateforme Web", techno: ["PHP", "Symfony", "MySQL"], detail: "Site communautaire de mise en relation d'utilisateurs." },
+    { nom: "Socializus", type: "Application Mobile", techno: ["React Native", "Firebase"], detail: "Application pour les sorties et l'intégration sociale." },
+    { nom: "GreenDesk", type: "Site Web (Solo)", techno: ["HTML", "CSS", "PHP"], detail: "Plateforme d'organisation d'espaces de travail éco-responsables." },
+    { nom: "Snake Game", type: "Jeu JavaScript", techno: ["JS Canvas"], detail: "Développement d'un jeu classique en pur JavaScript." },
+    { nom: "Smart Bike", type: "Site Dynamique", techno: ["PHP", "SQL"], detail: "Système de commande de vélos électriques." }
   ]
 };
 
-function getTime() { return new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }); }
-
 function appendMsg(html, isUser) {
-  const messagesDiv = document.getElementById('messages');
-  const row = document.createElement('div');
-  row.className = `msg-row ${isUser ? 'user' : ''}`;
-  
-  const avatar = document.createElement('div');
-  avatar.className = `msg-avatar ${isUser ? 'user-av' : 'ai'}`;
-  avatar.textContent = isUser ? '👤' : 'CJ';
-  
-  const bubble = document.createElement('div');
-  bubble.className = `bubble ${isUser ? 'user' : 'ai'}`;
-  bubble.innerHTML = html;
-  
-  if (isUser) { row.append(bubble, avatar); } else { row.append(avatar, bubble); }
-  
-  messagesDiv.appendChild(row);
-  const timeEl = document.createElement('div');
-  timeEl.className = `time ${isUser ? '' : 'ai-time'}`;
-  timeEl.textContent = getTime();
-  messagesDiv.appendChild(timeEl);
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  const div = document.createElement('div');
+  div.className = `msg-row ${isUser ? 'user' : ''}`;
+  div.innerHTML = `<div class="bubble ${isUser ? 'user' : 'ai'}">${html}</div>`;
+  document.getElementById('messages').appendChild(div);
+  document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;
 }
 
-function send(text) {
-  const msg = text.trim();
-  if (!msg) return;
-  appendMsg(msg, true);
-  document.getElementById('typing-container').style.display = 'block';
+function send(txt) {
+  if (!txt.trim()) return;
+  appendMsg(txt, true);
   
   setTimeout(() => {
-    document.getElementById('typing-container').style.display = 'none';
-    let response = "Je peux vous parler de mes projets (**Meetub**, **Socializus**...), de mes compétences ou de ma recherche d'alternance !";
-    
-    const lowMsg = msg.toLowerCase();
-    if (lowMsg.includes('projet') || lowMsg.includes('réalisation')) {
-      response = "Voici quelques-uns de mes projets récents 🚀 :<br><br>" + 
-        CHEDI.projets.map(p => `<strong>${p.nom}</strong> — ${p.type}<br>${p.techno.map(t=>`<span class="tag">${t}</span>`).join('')}<br>${p.detail}`).join('<br><br>');
-    } else if (lowMsg.includes('qui es-tu') || lowMsg.includes('présentation')) {
-      response = `Bonjour ! Je suis **Chedi Jaballi**, alternant Développeur Full Stack spécialisé en **Data & IA**. J'ai travaillé sur des projets comme **Meetub** et **Socializus**.`;
-    } else if (lowMsg.includes('contact') || lowMsg.includes('joindre')) {
-      response = `Vous pouvez me joindre ici :<br>📧 **${CHEDI.email}**<br>📞 **${CHEDI.telephone}**`;
+    let res = "Je peux vous parler de mes projets (**Meetub**, **Socializus**, **GreenDesk**) ou de mes compétences.";
+    const t = txt.toLowerCase();
+
+    if (t.includes('projet') || t.includes('réalisation')) {
+      res = "Voici mes projets principaux 🚀 :<br><br>" + CHEDI.projets.map(p => 
+        `<strong>${p.nom}</strong> (${p.type})<br>` + 
+        p.techno.map(tech => `<span class="tag">${tech}</span>`).join('') + 
+        `<br><small>${p.detail}</small>`
+      ).join('<br><br>');
     }
     
-    appendMsg(response, false);
-  }, 800);
+    appendMsg(res, false);
+  }, 600);
 }
 
 function sendFromInput() {
@@ -334,14 +101,9 @@ function sendFromInput() {
   input.value = '';
 }
 
-document.getElementById('user-input').addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendFromInput(); }
-});
-
+// Message de bienvenue avec les nouveaux projets cités direct !
 window.onload = () => {
-  setTimeout(() => {
-    appendMsg(`Bonjour ! 👋 Je suis l'assistant de **Chedi**. Posez-moi des questions sur mes projets (**Meetub**, **Socializus**) ou mes compétences en **IA** !`, false);
-  }, 400);
+  appendMsg("Bonjour ! 👋 Je suis l'IA de Chedi. J'ai récemment travaillé sur <strong>Meetub</strong> (Symfony) et <strong>Socializus</strong> (React Native).<br><br>Cliquez sur 🚀 <strong>Mes Projets</strong> pour voir la liste complète !", false);
 };
 </script>
 </body>

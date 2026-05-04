@@ -101,7 +101,6 @@
   }
   .portfolio-link:hover { background: rgba(59,130,246,0.25); }
 
-
   #suggestions {
     display: flex; gap: 8px; padding: 10px 16px;
     overflow-x: auto; flex-shrink: 0;
@@ -119,7 +118,6 @@
   }
   .chip:hover { background: var(--accent-glow); border-color: rgba(59,130,246,0.4); color: var(--accent2); }
 
-  
   #messages {
     flex: 1; overflow-y: auto;
     padding: 20px 16px;
@@ -175,7 +173,6 @@
   .time { font-size: 10px; color: var(--muted); margin-top: 4px; text-align: right; }
   .ai-time { text-align: left; margin-left: 39px; }
 
-  
   .typing-row { display: flex; align-items: center; gap: 9px; }
   #typing {
     display: none;
@@ -196,7 +193,6 @@
     40% { opacity: 1; transform: scale(1.1); }
   }
 
-  
   #input-bar {
     padding: 12px 16px;
     background: rgba(17,19,24,0.9);
@@ -278,7 +274,6 @@
 </div>
 
 <script>
-
 const CHEDI = {
   nom: "Chedi Jaballi",
   age: 20,
@@ -288,9 +283,7 @@ const CHEDI = {
   email: "jaballichedi92@gmail.com",
   linkedin: "Jaballi Chedi",
   portfolio: "https://my-portfolio-five-chi-95.vercel.app/",
-
   situation: "Actuellement en 2ème année de BTS SIO SLAM, candidat à un Bachelor 3 spécialisé en Data & IA en alternance à la rentrée 2026.",
-
   competences: {
     langages: ["HTML", "CSS", "JavaScript", "Python", "PHP", "SQL", "Java", "C++"],
     frontend: ["React Native", "Flutter", "Tailwind CSS"],
@@ -300,7 +293,6 @@ const CHEDI = {
     systemes: ["Linux", "Windows", "Déploiement", "Administration BDD"],
     outils: ["VS Code", "Git", "GitHub", "WordPress", "Canva", "CapCut", "Filmora", "Packet Tracer"],
   },
-
   experience: [
     {
       titre: "Stage Développeur Fullstack — ARTEM 5",
@@ -308,216 +300,60 @@ const CHEDI = {
       detail: "Développement Mobile & Web : conception d'interfaces performantes avec React Native et technologies Web standards. Intégration de l'IA : utilisation avancée de Claude et Grok pour le debugging, l'optimisation de code et la génération de scripts. Maintenance et résolution de bugs sur des applications existantes."
     }
   ],
-
   projets: [
-    {
-      nom: "Socializus",
-      type: "Application Mobile (Projet de groupe)",
-      techno: ["React Native", "JavaScript", "Firebase"],
-      detail: "Participation au développement d'une application d'intégration sociale facilitant les échanges linguistiques et les sorties entre membres."
-    },
-    {
-      nom: "Meetub",
-      type: "Plateforme Web (Projet de groupe)",
-      techno: ["PHP", "Symfony", "MySQL", "Tailwind CSS"],
-      detail: "Collaboration sur la création d'un site web communautaire permettant la mise en relation d'utilisateurs autour de centres d'intérêt communs."
-    },
-    {
-      nom: "GreenDesk",
-      type: "Site Web de Gestion (Projet Solo)",
-      techno: ["HTML", "CSS", "JavaScript", "PHP"],
-      detail: "Conception et réalisation complète d'une plateforme dédiée à l'organisation et à l'optimisation des espaces de travail écologiques."
-    },
-    {
-      nom: "SMART BIKE",
-      type: "Site web dynamique",
-      techno: ["HTML", "CSS", "PHP", "SQL"],
-      detail: "Création d'un site web dynamique avec développement front-end et back-end complet. Gestion de projet en équipe."
-    },
-    {
-      nom: "Snake Game",
-      type: "Jeu d'Arcade Classique",
-      techno: ["JavaScript", "HTML5 Canvas", "CSS"],
-      detail: "Développement en solo du célèbre jeu de serpent, mettant l'accent sur la logique algorithmique et la gestion des collisions en JS pur."
-    },
-    {
-      nom: "CryptoSim",
-      type: "Simulateur de Trading en Temps Réel",
-      techno: ["JavaScript", "Chart.js", "CSS"],
-      demo: "Lien vers la démo",
-      detail: "Visualisation d'un dashboard dynamique avec rendu graphique en temps réel des variations de cours. Fonctionnalités : gestion de portefeuille (Achat/Vente), calcul automatique du P&L et historique des transactions."
-    },
-    {
-      nom: "SPEED",
-      type: "Jeu d'Arcade 2D",
-      techno: ["HTML5", "Canvas", "CSS"],
-      demo: "Lien vers la démo",
-      detail: "Optimisation & UX : mise en place d'une difficulté progressive avec accélération dynamique et persistance des scores via LocalStorage. Audio & Design : utilisation de l'API WebAudioContext pour la synthèse sonore en temps réel et design adaptatif (Responsive Design)."
-    },
-    {
-      nom: "Jeux Mobiles",
-      type: "Développement Mobile",
-      techno: ["Android Studio", "Flutter", "Java"],
-      detail: "Développement de jeux mobiles sur Android Studio et Flutter en Java."
-    }
+    { nom: "Socializus", type: "App Mobile (Groupe)", techno: ["React Native", "Firebase"], detail: "Participation au développement d'une application d'intégration sociale facilitant les échanges linguistiques et les sorties entre membres." },
+    { nom: "Meetub", type: "Plateforme Web (Groupe)", techno: ["PHP", "Symfony", "MySQL", "Tailwind"], detail: "Collaboration sur la création d'un site web communautaire permettant la mise en relation d'utilisateurs par centres d'intérêt." },
+    { nom: "GreenDesk", type: "Site Web (Solo)", techno: ["HTML", "CSS", "PHP"], detail: "Conception et réalisation complète d'une plateforme dédiée à l'organisation et à l'optimisation des espaces de travail écologiques." },
+    { nom: "SMART BIKE", type: "Site dynamique", techno: ["HTML", "CSS", "PHP", "SQL"], detail: "Création d'un site web dynamique avec développement front-end et back-end complet." },
+    { nom: "Snake Game", type: "Jeu Arcade", techno: ["JS Canvas", "HTML5"], detail: "Développement en solo du célèbre jeu de serpent, focalisé sur la logique algorithmique." },
+    { nom: "CryptoSim", type: "Simulateur Trading", techno: ["JavaScript", "Chart.js"], detail: "Dashboard dynamique avec rendu graphique en temps réel des cours." },
+    { nom: "SPEED", type: "Jeu Arcade 2D", techno: ["HTML5", "Canvas"], detail: "Jeu avec difficulté progressive et persistance des scores." }
   ],
-
   formations: [
-    {
-      titre: "Bachelor 2 Informatique — EPSI Paris",
-      periode: "Février 2025 – Juillet 2026",
-      detail: "Développement applicatif & algorithmique, Développement Web (sites dynamiques et responsives), Systèmes & Réseaux, Bases de données client-serveur."
-    },
-    {
-      titre: "Baccalauréat Sciences de l'Informatique",
-      periode: "Juin 2024",
-      detail: "Mention Assez Bien."
-    }
+    { titre: "Bachelor 2 Informatique — EPSI Paris", periode: "2025 – 2026", detail: "Développement applicatif & algorithmique, Web, Systèmes & Réseaux." },
+    { titre: "Baccalauréat Informatique", periode: "2024", detail: "Mention Assez Bien." }
   ],
-
   langues: [
     { langue: "Anglais", niveau: "B2" },
-    { langue: "Allemand", niveau: "A2" },
-    { langue: "Français", niveau: "Natif / courant" }
+    { langue: "Français", niveau: "Natif" }
   ],
-
-  interets: [
-    "Trading & marchés financiers (2 certificats 2023)",
-    "Création de contenus digitaux (design, 10 montages vidéo)",
-    "Football (Club Africain) — Championnat Tunisien"
-  ],
-
   alternance: {
     recherche: true,
-    poste: "Bachelor 3 Data & IA en alternance",
+    poste: "Bachelor 3 Data & IA",
     rentree: "Rentrée 2026",
-    detail: "Je cherche une entreprise pour m'accueillir en alternance dans le cadre d'un Bachelor 3 spécialisé en Data & IA. Je suis rigoureux, curieux, et très motivé pour appliquer mes compétences techniques à des problématiques Data et IA."
+    detail: "Je cherche une alternance en Data & IA pour mettre en pratique mes compétences techniques."
   }
 };
 
-
-function getTime() {
-  return new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
-}
+function getTime() { return new Date().toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' }); }
 
 function detect(text, keywords) {
   const t = text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   return keywords.some(k => t.includes(k.normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
 }
 
-function buildResponse(question) {
-  const q = question;
-
-  
-  if (detect(q, ['bonjour','salut','hello','qui es-tu','qui etes','presentation','présentation','présente','tu es qui','c\'est quoi','about'])) {
-    return `Bonjour ! 👋 Je suis <strong>Chedi Jaballi</strong>, 20 ans, basé à Aubervilliers (93).<br><br>
-Je suis <strong>Alternant Développeur Full Stack</strong>, actuellement en 2ème année de BTS SIO SLAM. Je prépare un <strong>Bachelor 3 spécialisé en Data & IA</strong> en alternance pour la rentrée 2026.<br><br>
-Je suis passionné par le développement, l'IA et les données — toujours curieux, toujours en train d'apprendre ! 🚀<br><br>
-Retrouve mon travail sur mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a>.`;
+function buildResponse(q) {
+  if (detect(q, ['bonjour','salut','hello','qui es-tu','presentation'])) {
+    return `Bonjour ! 👋 Je suis <strong>Chedi Jaballi</strong>, 20 ans, basé à Aubervilliers (93).<br><br>Je suis <strong>Alternant Développeur Full Stack</strong>, actuellement en 2ème année de BTS SIO SLAM. Je prépare un <strong>Bachelor 3 spécialisé en Data & IA</strong> pour la rentrée 2026.<br><br>Retrouve mon travail sur mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a>.`;
   }
-
-  
-  if (detect(q, ['competence','compétence','skill','technologie','langages','maîtrise','sais faire','stack','outil','langage'])) {
+  if (detect(q, ['competence','skill','technologie','langages'])) {
     const C = CHEDI.competences;
-    return `Voici mon stack technique 💻 :<br><br>
-<strong>Langages :</strong><br>${C.langages.map(t=>`<span class="tag">${t}</span>`).join('')}<br><br>
-<strong>Frontend / Mobile :</strong><br>${C.frontend.concat(C.mobile).filter((v,i,a)=>a.indexOf(v)===i).map(t=>`<span class="tag">${t}</span>`).join('')}<br><br>
-<strong>IA & Automation :</strong><br>${C.ia.map(t=>`<span class="tag">${t}</span>`).join('')}<br><br>
-<strong>Systèmes & Outils :</strong><br>${C.systemes.concat(C.outils).map(t=>`<span class="tag">${t}</span>`).join('')}`;
+    return `Voici mon stack technique 💻 :<br><br><strong>Langages :</strong><br>${C.langages.map(t=>`<span class="tag">${t}</span>`).join('')}<br><br><strong>IA & Automation :</strong><br>${C.ia.map(t=>`<span class="tag">${t}</span>`).join('')}`;
   }
-
-
-  
-  if (detect(q, ['projet','projects','réalisation','creation','meetub','socializus','greendesk','snake','application','site','jeu','crypto','speed','smart bike','trading'])) {
-    return `J'ai réalisé plusieurs projets concrets 🚀 :<br><br>` +
-      CHEDI.projets.map(p =>
-        `<strong>${p.nom}</strong> — <em>${p.type}</em><br>
-        ${p.techno.map(t=>`<span class="tag">${t}</span>`).join('')}<br>
-        ${p.detail}`
-      ).join('<br><br>') +
-      `<br><br>Retrouve-les en détail sur mon <a href="${CHEDI.portfolio}" target="_blank">portfolio →</a>`;
+  if (detect(q, ['projet','projects','réalisation','creation','meetub','socializus','greendesk','snake'])) {
+    return `J'ai réalisé plusieurs projets 🚀 :<br><br>` + CHEDI.projets.map(p => `<strong>${p.nom}</strong> — <em>${p.type}</em><br>${p.techno.map(t=>`<span class="tag">${t}</span>`).join('')}<br>${p.detail}`).join('<br><br>');
   }
-
-  // Alternance / recherche
-  if (detect(q, ['alternance','stage','recherche','disponible','disponibilité','bachelor','recrutement','poste','opportunite','opportunité','embauche'])) {
-    const a = CHEDI.alternance;
-    return `Oui, je suis activement à la recherche d'une alternance ! 🎓<br><br>
-<strong>Poste recherché :</strong> ${a.poste}<br>
-<strong>Disponibilité :</strong> ${a.rentree}<br><br>
-${a.detail}<br><br>
-N'hésitez pas à me contacter directement 👇<br>
-📧 <strong>${CHEDI.email}</strong><br>
-📞 <strong>${CHEDI.telephone}</strong>`;
+  if (detect(q, ['contact','joindre','email','mail','téléphone','linkedin'])) {
+    return `Je suis toujours disponible pour échanger ! 📬<br><br>📧 <strong>${CHEDI.email}</strong><br>📞 <strong>${CHEDI.telephone}</strong><br>💼 LinkedIn : <strong>${CHEDI.linkedin}</strong><br>🌐 Portfolio : <a href="${CHEDI.portfolio}" target="_blank">Portfolio</a><br>📍 ${CHEDI.localisation}`;
   }
-
-  // Expérience
-  if (detect(q, ['experience','expérience','stage','travail','artem','artem5','mission','entreprise'])) {
-    const e = CHEDI.experience[0];
-    return `Mon expérience professionnelle principale :<br><br>
-<strong>${e.titre}</strong><br>
-📅 ${e.periode}<br><br>
-${e.detail}`;
+  if (detect(q, ['alternance','recherche'])) {
+    return `Oui, je cherche une alternance pour la rentrée 2026 en Bachelor 3 Data & IA ! 🎓<br><br>📧 <strong>${CHEDI.email}</strong>`;
   }
-
-  // Contact
-  if (detect(q, ['contact','joindre','appel','email','mail','téléphone','telephone','linkedin','coordonnée','coordonnées','parler'])) {
-    return `Je suis toujours disponible pour échanger ! 📬<br><br>
-📧 <strong>${CHEDI.email}</strong><br>
-📞 <strong>${CHEDI.telephone}</strong><br>
-💼 LinkedIn : <strong>${CHEDI.linkedin}</strong><br>
-🌐 Portfolio : <a href="${CHEDI.portfolio}" target="_blank">my-portfolio-five-chi-95.vercel.app</a><br>
-📍 ${CHEDI.localisation}`;
+  if (detect(q, ['experience','stage','artem'])) {
+    return `Mon stage chez <strong>ARTEM 5</strong> (Janv/Févr 2026) : Développement React Native et intégration d'IA Claude/Grok.`;
   }
-
-  
-  if (detect(q, ['formation','etude','études','bts','bachelor','epsi','bac','école','diplome','diplôme'])) {
-    return `Mon parcours scolaire 🏫 :<br><br>` +
-      CHEDI.formations.map(f =>
-        `<strong>${f.titre}</strong><br>📅 ${f.periode}<br>${f.detail}`
-      ).join('<br><br>');
-  }
-
-  if (detect(q, ['langue','language','anglais','allemand','parle','bilingue','niveau'])) {
-    return `Je parle plusieurs langues 🌍 :<br><br>` +
-      CHEDI.langues.map(l => `<strong>${l.langue}</strong> — Niveau ${l.niveau}`).join('<br>') +
-      `<br><br>Mon niveau B2 en anglais me permet de travailler dans des environnements internationaux.`;
-  }
-
-  
-  if (detect(q, ['interet','intérêt','hobby','loisir','passion','sport','foot','trading','video','contenu'])) {
-    return `En dehors du code, je m'intéresse à 🎯 :<br><br>` +
-      CHEDI.interets.map(i => `• ${i}`).join('<br>') +
-      `<br><br>Le trading m'a d'ailleurs beaucoup appris sur la rigueur et l'analyse de données !`;
-  }
-
-  
-  if (detect(q, ['age','âge','ans','habite','localisation','adresse','permis','lieu'])) {
-    return `Quelques infos sur moi ℹ️ :<br><br>
-🎂 <strong>${CHEDI.age} ans</strong><br>
-📍 <strong>${CHEDI.localisation}</strong><br>
-🚗 Permis <strong>${CHEDI.permis}</strong>`;
-  }
-
-  
-  if (detect(q, ['ia','intelligence artificielle','data','machine learning','ml','prompt','grok','claude'])) {
-    return `L'IA et la Data, c'est ma passion actuelle ! 🤖<br><br>
-Je pratique le <strong>Prompt Engineering</strong> avec Claude et Grok au quotidien — notamment pour optimiser du code et automatiser des workflows.<br><br>
-C'est d'ailleurs pourquoi je vise un <strong>Bachelor 3 Data & IA</strong> : je veux approfondir ces compétences dans un contexte professionnel.<br><br>
-Cette interface de chat que vous utilisez en ce moment ? Elle tourne <strong>100% côté client</strong>, sans API externe. 😄`;
-  }
-
- 
-  if (detect(q, ['merci','thanks','super','parfait','top','bravo','bonne journée','au revoir','bye'])) {
-    return `Merci à vous ! 😊 C'était un plaisir d'échanger.<br>
-N'hésitez pas à visiter mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a> ou à me contacter directement pour toute opportunité.<br><br>
-Bonne journée ! 🚀`;
-  }
-
- 
-  return `Bonne question ! 🤔 Pour l'instant je peux vous parler de mes <strong>compétences</strong>, mes <strong>projets</strong> (comme Socializus ou Meetub), mon <strong>expérience</strong>, ma recherche d'<strong>alternance</strong>, ou mes <strong>coordonnées</strong>.<br><br>
-Vous pouvez aussi utiliser les suggestions en haut ou visiter mon <a href="${CHEDI.portfolio}" target="_blank">portfolio</a> pour en savoir plus !`;
+  return `Bonne question ! 🤔 Je peux te parler de mes <strong>projets</strong> (Socializus, Meetub), mes <strong>compétences</strong>, mon <strong>expérience</strong> ou te donner mes <strong>coordonnées</strong>.`;
 }
-
 
 const messagesDiv = document.getElementById('messages');
 const typingContainer = document.getElementById('typing-container');
@@ -526,69 +362,37 @@ const inputEl = document.getElementById('user-input');
 function appendMsg(html, isUser) {
   const row = document.createElement('div');
   row.className = `msg-row ${isUser ? 'user' : ''}`;
-
   const avatar = document.createElement('div');
   avatar.className = `msg-avatar ${isUser ? 'user-av' : 'ai'}`;
   avatar.textContent = isUser ? '👤' : 'CJ';
-
   const bubble = document.createElement('div');
   bubble.className = `bubble ${isUser ? 'user' : 'ai'}`;
   bubble.innerHTML = html;
-
-  if (isUser) {
-    row.appendChild(bubble);
-    row.appendChild(avatar);
-  } else {
-    row.appendChild(avatar);
-    row.appendChild(bubble);
-  }
-
+  if (isUser) { row.appendChild(bubble); row.appendChild(avatar); } 
+  else { row.appendChild(avatar); row.appendChild(bubble); }
+  messagesDiv.appendChild(row);
   const timeEl = document.createElement('div');
   timeEl.className = `time ${isUser ? '' : 'ai-time'}`;
   timeEl.textContent = getTime();
-
-  messagesDiv.appendChild(row);
   messagesDiv.appendChild(timeEl);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
 function send(text) {
-  const msg = text.trim();
-  if (!msg) return;
-  inputEl.value = '';
-  inputEl.style.height = 'auto';
-
-  appendMsg(msg, true);
+  const msg = text.trim(); if (!msg) return;
+  inputEl.value = ''; appendMsg(msg, true);
   typingContainer.style.display = 'block';
-  messagesDiv.scrollTop = messagesDiv.scrollHeight;
-
   setTimeout(() => {
     typingContainer.style.display = 'none';
-    const reply = buildResponse(msg);
-    appendMsg(reply, false);
-  }, 700 + Math.random() * 600);
+    appendMsg(buildResponse(msg), false);
+  }, 800);
 }
 
-function sendFromInput() {
-  send(inputEl.value);
-}
-
-inputEl.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && !e.shiftKey) {
-    e.preventDefault();
-    sendFromInput();
-  }
-});
-inputEl.addEventListener('input', () => {
-  inputEl.style.height = 'auto';
-  inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
-});
-
+function sendFromInput() { send(inputEl.value); }
+inputEl.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendFromInput(); }});
 
 setTimeout(() => {
-  appendMsg(`Bonjour et bienvenue ! 👋 Je suis l'assistant IA de <strong>Chedi Jaballi</strong>.<br><br>
-Je peux répondre à vos questions sur son profil, ses compétences, ses projets (comme <strong>Socializus</strong> ou <strong>Meetub</strong>) et sa disponibilité pour une <strong>alternance en Data & IA (rentrée 2026)</strong>.<br><br>
-Utilisez les suggestions ci-dessus ou tapez directement votre question ! 🚀`, false);
+  appendMsg(`Bonjour ! 👋 Je suis l'assistant IA de <strong>Chedi Jaballi</strong>.<br><br>Posez-moi vos questions sur mes projets (<strong>Socializus</strong>, <strong>Meetub</strong>), mon expérience ou mes coordonnées ! 🚀`, false);
 }, 300);
 </script>
 </body>
